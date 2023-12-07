@@ -1,0 +1,28 @@
+<section class="usuario">
+    <div class="wrapper">
+        <mat-drawer-container>
+            <mat-drawer #drawer mode="over" position="start">
+                <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+            </mat-drawer>
+            <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+            <div class="body-usuario">
+                <div class="titulo">
+                    <div class="line-color">
+                        <div class="vertical-line" style="height: 111px;"></div>
+                    </div>
+                    <span class="texto-titulo">INFORMACIÓN DEL USUARIO</span>
+                </div>
+                <div class="informacion">
+                    <img src="/assets/images/foto-usuario.jpg" class="foto-usuario">
+                    <span class="txt-bold">Iván Pérez Sánchez</span>
+                    <span class="txt">Herramientas Web</span>
+                    <span class="txt">Mtro. Luis Yael Méndez Sánchez</span>
+                    <span class="txt">Otoño 2023</span>
+                </div>
+                <div class="footer">
+                    <app-footer-app></app-footer-app>
+                </div>
+            </div>
+        </mat-drawer-container>
+    </div>
+</section>

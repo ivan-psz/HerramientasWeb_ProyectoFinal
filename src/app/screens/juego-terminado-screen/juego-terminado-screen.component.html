@@ -1,0 +1,40 @@
+<section class="juego-terminado">
+    <div class="wrapper">
+        <mat-drawer-container>
+            <mat-drawer #drawer mode='over' position="start">
+                <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+            </mat-drawer>
+            <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+            <div class="body-juego-terminado">
+                <div class="felicitacion-section">
+                    <div class="line-color">
+                        <div class="vertical-line" style="height: 111px;"></div>
+                    </div>
+                    <span class="txt-felicitacion">¡EXCELENTE CARRERA!</span>
+                </div>
+                <div class="puntaje-section">
+                    <div class="line-color-puntaje">
+                        <div class="vertical-line-puntaje"></div>
+                    </div>
+                    <span class="txt-red">OBTUVISTE</span>
+                    <div class="div-texto">
+                        <span class="txt-puntaje">{{puntaje}}</span>
+                    </div>
+                    <span class="txt-puntos">puntos</span>
+                </div>
+                <div class="agradecimiento-section">
+                    <span class="txt-agradecimiento">Gracias por participar, acumula más puntos y gana una increíble <span class="txt-agradecimiento-bold">Ducati Scrambler.</span></span>
+                </div>
+                <div class="btn-section">
+                    <button mat-flat-button color="warn" class="btn-inicio" (click)="goInicio()">
+                        <span class="text-btn">IR AL INICIO</span>
+                    </button>
+                </div>
+
+                <div class="footer">
+                    <app-footer-app></app-footer-app>
+                </div>
+            </div>
+        </mat-drawer-container>
+    </div>
+</section>

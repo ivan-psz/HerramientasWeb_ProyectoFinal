@@ -1,0 +1,74 @@
+<section class="intrucciones">
+    <div class="wrapper">
+        <mat-drawer-container>
+            <mat-drawer #drawer mode='over' position="start">
+                <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+            </mat-drawer>
+            <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+            <div class="body-instrucciones">
+                <div class="titulo">
+                    <div class="line-color">
+                        <div class="vertical-line" style="height: 111px;"></div>
+                    </div>
+                    <span class="texto-titulo">¡HORA DE CORRER!</span>
+                </div>
+                <div class="objetivo">
+                    <span class="txt-bold">Objetivo</span>
+                    <span class="texto">
+                        Estás a punto de jugar Moto Rider, el juego 
+                        consiste en conducir una motocicleta a 
+                        través de un camino con autos, tu misión es 
+                        esquivarlos durante 120 segundos mientras 
+                        la velocidad va aumentando.
+                    </span>
+                </div>
+                <div class="puntuacion">
+                    <span class="txt-bold">Puntuación</span>
+                    <div class="tabla-puntuacion">
+                        <table class="tabla">
+                            <thead class="head-table">
+                              <tr>
+                                <th scope="col">Acción</th>
+                                <th scope="col">Puntos</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="tr-table" *ngFor="let punto of lista_puntuaciones; let i=index">
+                                <td style="min-width: 100px; text-align: left;">{{punto.accion}}</td>
+                                <td style="text-align: center;">{{punto.puntos}}</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="informacion">
+                    <span class="txt-bold">Información adicional</span>
+                    <span class="texto">
+                        Tienes dos oportunidades por cada código 
+                        que redimimas. 
+                    </span>
+                    <span class="texto">
+                        La 1ra oportunidad es entrenamiento y no 
+                        genera puntos. 
+                    </span>
+                    <span class="texto">
+                        La 2da oportunidad genera puntos, el juego 
+                        termina si chocas o se termina el tiempo.
+                    </span>
+                    <span class="texto">
+                        Verifica que tu conexión a Internet sea 
+                    estable al momento de jugar.
+                    </span>
+                </div>
+                <div class="d-flex flex-direction-row justify-content-center w-100 mt-3 mb-3">
+                    <button mat-flat-button color="warn" class="btn-login" (click)="jugar()">
+                        <span class="text-btn">JUGAR AHORA</span>
+                    </button>
+                </div>
+                <div class="footer">
+                    <app-footer-app></app-footer-app>
+                </div>
+            </div>
+        </mat-drawer-container>
+    </div>
+</section>

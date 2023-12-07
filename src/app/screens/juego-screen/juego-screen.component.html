@@ -1,0 +1,56 @@
+<section class="juego">
+    <div class="wrapper">
+        <mat-drawer-container>
+            <mat-drawer #drawer mode='over' position="start">
+                <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+            </mat-drawer>
+            <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+            <div class="body-juego">
+                <div class="titulo">
+                    <div class="line-color">
+                        <div class="vertical-line" style="height: 111px;"></div>
+                    </div>
+                    <span class="texto-titulo">NUEVO LOOK</span>
+                </div>
+                <div class="texto">
+                    <span class="txt">
+                        ¿Quieres tener una idea de cómo verías si 
+                        usaras unos increíbles Carrera Ducati?
+                    </span>
+                </div>
+                <div class="imagenes">
+                    <div class="parte">
+                        <img src="/assets/images/lentes-ducati-1.png" class="imagen">
+                        <span class="txt-bold">CARDUC 001/S</span>
+                    </div>
+                    <div class="parte">
+                        <img src="/assets/images/lentes-ducati-2.png" class="imagen">
+                        <span class="txt-bold">CARDUC 002/S</span>
+                    </div>
+                    <div class="parte">
+                        <img src="/assets/images/lentes-ducati-3.png" class="imagen">
+                        <span class="txt-bold">CARDUC 003/S</span>
+                    </div>
+                </div>
+                <div class="botones">
+                    <div class="d-flex flex-direction-row justify-content-center w-100 mt-3 mb-3">
+                        <button mat-flat-button color="basic" class="btn-omitir" (click)="omitir()">
+                            <span class="text-btn">OMITIR</span>
+                        </button>
+                    </div>
+                    <div class="d-flex flex-direction-row justify-content-center w-100 mt-3 mb-3">
+                        <button mat-flat-button color="warn" class="btn-login" (click)="usarLentes()">
+                            <span class="text-btn">USAR LENTES</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="rectangulo">
+                    <span class="txt-rectangulo">Ducati Motor Holding S.p.A. Official Licensed Product</span>
+                </div>
+                <div class="footer">
+                    <app-footer-app></app-footer-app>
+                </div>
+            </div>
+        </mat-drawer-container>
+    </div>
+</section>
